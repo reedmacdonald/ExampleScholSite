@@ -3,6 +3,9 @@ module.exports = {
     title: 'Frontend Masters Gatsby Workshop',
     description:
       'A site we built together during a full-day Frontend Masters Gatsby workshop!',
+    pages: {
+      dumb: 'thisIsDumb',
+    },
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -34,9 +37,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'lists',
+        path: 'lists',
+      },
+    },
+    {
       resolve: 'gatsby-source-instagram',
       options: {
-        username: 'gatsbyjs',
+        username: 'reed.macdonald',
       },
     },
     {
@@ -46,6 +56,14 @@ module.exports = {
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
         generateStatsFile: true,
         analyzerMode: 'static',
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `kl5k0edfvumf`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: 'x0iFw_4kt147_wAAdLYzuboK01UWeRBEp2yhRvnXg4s',
       },
     },
   ],

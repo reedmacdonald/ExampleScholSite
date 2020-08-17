@@ -37,7 +37,7 @@ const Header = () => (
     `}
   >
     <NavLink to="/" fontWeight="bold">
-      FEM Workshop
+      JAM Blog
     </NavLink>
     <nav
       css={css`
