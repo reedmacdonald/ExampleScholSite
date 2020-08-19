@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -30,7 +30,9 @@ const Exclusives = props => {
       </div>
 
       <br />
-      <ReadLink to="/">&larr; back to all posts</ReadLink>
+      <Link to="/">&larr; back to all exclusives</Link>
+      <br />
+      <Link to="terms">Or see the terms and consitions</Link>
     </Layout>
   );
 };

@@ -115,6 +115,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           description
           dripId
           slug
+          termsAndConditions {
+            json
+          }
           headerImage {
             description
             file {
@@ -147,12 +150,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
     actions.createPage({
       path: `exclusive/${post.slug}/terms`,
-      component: require.resolve('./src/templates/exclusives.js'),
+      component: require.resolve('./src/templates/terms.js'),
       context: {
         slug: post.slug,
         title: post.title,
         body: post.body,
         image: post.headerImage.file.url,
+        terms: post.termsAndConditions,
       },
     });
   });
