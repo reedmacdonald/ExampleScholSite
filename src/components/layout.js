@@ -4,9 +4,9 @@ import Helmet from 'react-helmet';
 import Header from './header';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 
-const Layout = ({ children }) => {
+const Layout = props => {
   const { title, description } = useSiteMetadata();
-
+  console.log(props, '<---props');
   return (
     <>
       <Global
@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
       />
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>{props.title || title}</title>
         <meta name="description" content={description} />
       </Helmet>
       <Header />
@@ -77,7 +77,7 @@ const Layout = ({ children }) => {
           width: 550px;
         `}
       >
-        {children}
+        {props.children}
       </main>
     </>
   );

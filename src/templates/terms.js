@@ -8,8 +8,9 @@ import Layout from '../components/layout';
 import ReadLink from '../components/read-link';
 
 const Terms = props => {
+  //console.log(document.cookie, '<---document.cookie');
   return (
-    <Layout>
+    <Layout title="Tragedy">
       <h1>{props.pageContext.title} Terms and Conditions</h1>
       <div>
         {documentToReactComponents(props.pageContext.terms.json, {

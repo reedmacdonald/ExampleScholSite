@@ -48,7 +48,7 @@ const Header = () => (
         Home
       </NavLink>
       <NavLink to="/exclusives/" activeClassName="current-page">
-        Exclusives
+        Posts
       </NavLink>
       <NavLink to="/contact/" activeClassName="current-page">
         Contact

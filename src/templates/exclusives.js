@@ -13,9 +13,9 @@ const Exclusives = props => {
       <div>SWelcome to the Exclusives Page</div>
       <h1>{props.pageContext.title}</h1>
       <h4>{props.pageContext.description}</h4>
-      <div style={{ maxWidth: '200px' }}>
+      <div style={{ width: '100%' }}>
         <img
-          style={{ maxWidth: '300px' }}
+          style={{ width: '100%', height: '200px', objectFit: 'cover' }}
           src={`https:${props.pageContext.image}`}
         />
       </div>
