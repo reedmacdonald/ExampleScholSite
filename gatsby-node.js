@@ -145,5 +145,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         image: post.headerImage.file.url,
       },
     });
+    actions.createPage({
+      path: `exclusive/${post.slug}/terms`,
+      component: require.resolve('./src/templates/exclusives.js'),
+      context: {
+        slug: post.slug,
+        title: post.title,
+        body: post.body,
+        image: post.headerImage.file.url,
+      },
+    });
   });
 };
