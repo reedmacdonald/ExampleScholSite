@@ -9,8 +9,7 @@ import ReadLink from '../components/read-link';
 
 const Exclusives = props => {
   return (
-    <Layout>
-      <div>SWelcome to the Exclusives Page</div>
+    <Layout title={props.pageContext.title}>
       <h1>{props.pageContext.title}</h1>
       <h4>{props.pageContext.description}</h4>
       <div style={{ width: '100%' }}>
@@ -30,9 +29,8 @@ const Exclusives = props => {
       </div>
 
       <br />
-      <Link to="/">&larr; back to all exclusives</Link>
+      <Link to="/">&larr; back to all posts</Link>
       <br />
-      <Link to="terms">Or see the terms and consitions</Link>
     </Layout>
   );
 };
