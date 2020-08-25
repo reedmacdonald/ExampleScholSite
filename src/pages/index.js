@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import usePosts from '../hooks/use-posts';
 import Hero from '../components/hero';
 import PostPreview from '../components/post-preview';
-import Insta from '../components/insta';
+
 import { Link } from 'gatsby';
 import useExclusives from '../hooks/use-exclusives';
 
