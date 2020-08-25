@@ -27,7 +27,7 @@ const Exclusives = props => {
           },
         })}
       </div>
-
+      <Link to="terms">Terms and Conditions</Link>
       <br />
       <Link to="/">&larr; back to all posts</Link>
       <br />

@@ -37,7 +37,7 @@ const Header = () => (
     `}
   >
     <NavLink to="/" fontWeight="bold">
-      JAM Blog
+      Scholarship Site
     </NavLink>
     <nav
       css={css`
@@ -48,7 +48,7 @@ const Header = () => (
         Home
       </NavLink>
       <NavLink to="/exclusives/" activeClassName="current-page">
-        Posts
+        Exclusives
       </NavLink>
       <NavLink to="/contact/" activeClassName="current-page">
         Contact

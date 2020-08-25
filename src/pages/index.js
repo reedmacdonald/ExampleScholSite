@@ -14,7 +14,7 @@ export default () => {
     <>
       <Hero />
       <Layout>
-        <h2>Blog Posts</h2>
+        <h2>Exclusive Scholarships</h2>
         {exclusives.map(exclusive => (
           //<PostPreview key={post.slug} post={post} />
           <div
@@ -40,7 +40,6 @@ export default () => {
             <br />
           </div>
         ))}
-        <Insta />
       </Layout>
     </>
   );
