@@ -6,6 +6,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import ReadLink from '../components/read-link';
+import Form from '../components/form';
 
 const Exclusives = props => {
   return (
@@ -27,9 +28,11 @@ const Exclusives = props => {
           },
         })}
       </div>
+      <Form title={props.pageContext.title} />
+      <br />
       <Link to="terms">Terms and Conditions</Link>
       <br />
-      <Link to="/">&larr; back to all posts</Link>
+      <Link to="/">&larr; back to all scholarships</Link>
       <br />
     </Layout>
   );
