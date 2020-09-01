@@ -3,9 +3,10 @@ import Layout from '../components/layout';
 import usePosts from '../hooks/use-posts';
 import Hero from '../components/hero';
 import PostPreview from '../components/post-preview';
-
 import { Link } from 'gatsby';
 import useExclusives from '../hooks/use-exclusives';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default () => {
   const posts = usePosts();
@@ -15,31 +16,19 @@ export default () => {
       <Hero />
       <Layout>
         <h2>Exclusive Scholarships</h2>
-        {exclusives.map(exclusive => (
-          //<PostPreview key={post.slug} post={post} />
-          <div
-            style={{
-              width: '100%',
-              textAlign: 'center',
-              textDecoration: 'none',
-              border: '2px solid black',
-              borderRadius: '20px',
-            }}
-          >
-            <Link
-              style={{ textDecoration: 'none', color: 'black' }}
-              to={`/exclusive/${exclusive.slug}`}
-            >
-              <h3>{exclusive.title}</h3>
-              <p style={{ textAlign: 'center' }}>{exclusive.description}</p>
-              <img
-                style={{ width: '100%', height: '100px', objectFit: 'cover' }}
-                src={`http:${exclusive.image}`}
-              />
+
+        <Carousel>
+          {exclusives.map(exclusive => (
+            <Link to={`/exclusive/${exclusive.slug}`}>
+              <div>
+                <p className="legend">{exclusive.title}</p>
+                <img src={`http:${exclusive.image}`} />
+
+                <br />
+              </div>
             </Link>
-            <br />
-          </div>
-        ))}
+          ))}
+        </Carousel>
       </Layout>
     </>
   );

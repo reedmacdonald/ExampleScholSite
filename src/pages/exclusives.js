@@ -13,7 +13,7 @@ export default () => {
     <>
       <Hero />
       <Layout title="Tragedy">
-        <h2 style={{ textAlign: 'center' }}>Read my blog</h2>
+        <h2 style={{ textAlign: 'center' }}>All Scholarships</h2>
         {exclusives.map(exclusive => (
           //<PostPreview key={post.slug} post={post} />
           <div
