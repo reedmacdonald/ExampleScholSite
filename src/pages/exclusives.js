@@ -34,6 +34,7 @@ export default () => {
               <img
                 style={{ width: '100%', height: '100px', objectFit: 'cover' }}
                 src={`http:${exclusive.image}`}
+                alt="random Background Image"
               />
             </Link>
             <br />

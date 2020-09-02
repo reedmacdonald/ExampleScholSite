@@ -20,6 +20,7 @@ const ImageGrid = () => {
           }}
           src={Thing1}
           style={{ border: oneOutline ? '5px solid red' : 'none' }}
+          alt="category"
         ></img>
       </div>
       <div className="div2">
@@ -29,6 +30,7 @@ const ImageGrid = () => {
           }}
           src={Thing2}
           style={{ border: twoOutline ? '5px solid red' : 'none' }}
+          alt="category"
         ></img>
       </div>
       <div className="div3">
@@ -38,6 +40,7 @@ const ImageGrid = () => {
           }}
           style={{ border: threeOutline ? '5px solid red' : 'none' }}
           src={Thing3}
+          alt="category"
         ></img>
       </div>
       <div className="div4">
@@ -47,6 +50,7 @@ const ImageGrid = () => {
           }}
           style={{ border: fourOutline ? '5px solid red' : 'none' }}
           src={Thing4}
+          alt="category"
         ></img>
       </div>
     </div>

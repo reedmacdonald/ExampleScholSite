@@ -23,7 +23,10 @@ export default () => {
             <Link to={`/exclusive/${exclusive.slug}`}>
               <div>
                 <p className="legend">{exclusive.title}</p>
-                <img src={`http:${exclusive.image}`} />
+                <img
+                  alt="random background image"
+                  src={`http:${exclusive.image}`}
+                />
 
                 <br />
               </div>
