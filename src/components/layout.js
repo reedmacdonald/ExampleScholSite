@@ -67,7 +67,21 @@ const Layout = props => {
       <Helmet>
         <html lang="en" />
         <title>{props.title || title}</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={props.description || description} />
+        <meta name="image" content={props.image || null} />
+        <meta property="og:title" content={props.title || title} />
+        <meta
+          property="og:description"
+          content={props.description || description}
+        />
+        <meta property="og:image" content={props.image || null} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={props.title || title} />
+        <meta
+          name="twitter:description"
+          content={props.description || description}
+        />
+        <meta name="twitter:image" content={props.image || null} />
       </Helmet>
       <Header />
       <main

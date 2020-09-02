@@ -14,7 +14,7 @@ export default () => {
   return (
     <>
       <Hero />
-      <Layout>
+      <Layout title="Welcome">
         <h2>Exclusive Scholarships</h2>
 
         <Carousel>

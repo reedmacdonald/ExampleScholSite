@@ -10,7 +10,11 @@ import Form from '../components/form';
 
 const Exclusives = props => {
   return (
-    <Layout title={props.pageContext.title}>
+    <Layout
+      title={props.pageContext.title}
+      image={`https:${props.pageContext.image}`}
+      description={props.pageContext.description}
+    >
       <h1>{props.pageContext.title}</h1>
       <h4>{props.pageContext.description}</h4>
       <div style={{ width: '100%' }}>

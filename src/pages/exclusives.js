@@ -12,7 +12,7 @@ export default () => {
   return (
     <>
       <Hero />
-      <Layout title="Tragedy">
+      <Layout title="Exclusives">
         <h2 style={{ textAlign: 'center' }}>All Scholarships</h2>
         {exclusives.map(exclusive => (
           //<PostPreview key={post.slug} post={post} />
