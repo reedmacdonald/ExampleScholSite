@@ -25,7 +25,7 @@ export default () => {
                 <p className="legend">{exclusive.title}</p>
                 <img
                   alt="random background image"
-                  src={`http:${exclusive.image}`}
+                  src={`https:${exclusive.image}`}
                 />
 
                 <br />
