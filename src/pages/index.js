@@ -7,6 +7,7 @@ import { Link } from 'gatsby';
 import useExclusives from '../hooks/use-exclusives';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import ImageGrid from '../components/imageGrid';
 
 export default () => {
   const posts = usePosts();
@@ -29,6 +30,7 @@ export default () => {
             </Link>
           ))}
         </Carousel>
+        <ImageGrid />
       </Layout>
     </>
   );
