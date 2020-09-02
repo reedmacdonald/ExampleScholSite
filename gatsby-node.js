@@ -146,6 +146,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         title: post.title,
         body: post.body,
         image: post.headerImage.file.url,
+        description: post.description,
       },
     });
     actions.createPage({

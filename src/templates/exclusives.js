@@ -9,6 +9,10 @@ import ReadLink from '../components/read-link';
 import Form from '../components/form';
 
 const Exclusives = props => {
+  console.log(
+    props.pageContext.description,
+    '<---props.pageContext.description',
+  );
   return (
     <Layout
       title={props.pageContext.title}

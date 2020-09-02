@@ -3,6 +3,7 @@ import { Global, css } from '@emotion/core';
 import Helmet from 'react-helmet';
 import Header from './header';
 import useSiteMetadata from '../hooks/use-sitemetadata';
+import { Link } from 'gatsby';
 
 const Form = props => {
   const [showModal, setShowModal] = React.useState(false);
@@ -41,8 +42,10 @@ const Form = props => {
       ) : (
         <div
           style={{
+            position: 'fixed',
+            top: 30,
             display: 'grid',
-            height: '700px',
+            height: '600px',
             backgroundColor: 'skyBlue',
             placeItems: 'center',
           }}
@@ -53,9 +56,12 @@ const Form = props => {
               Thank you for applying to the {props.title}
             </h4>
             <h5 style={{ textAlign: 'center', padding: '10px' }}>
-              If you won anything you'll be contacted. Else, feel free to poke
-              around the place.
+              If you won anything you'll be contacted. Otherwise, feel free to
+              poke around the place.
             </h5>
+            <div style={{ display: 'grid', placeItems: 'center' }}>
+              <Link to="/">Home</Link>
+            </div>
           </div>
         </div>
       )}
