@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
 const ImageBackground = styled(BackgroundImage)`
-  background-position: top 20% center;
+  background-position: top 70% center;
   background-size: cover;
   height: 50vh;
   margin-top: 0;
@@ -49,7 +49,7 @@ const TextBox = styled('div')`
 const Hero = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "court-one.jpg" }) {
+      image: file(relativePath: { eq: "library.jpg" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp

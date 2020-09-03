@@ -32,7 +32,13 @@ export default () => {
               <h3>{exclusive.title}</h3>
               <p style={{ textAlign: 'center' }}>{exclusive.description}</p>
               <img
-                style={{ width: '100%', height: '100px', objectFit: 'cover' }}
+                style={{
+                  width: '100%',
+                  height: '100px',
+                  objectFit: 'cover',
+                  borderRadius: '0',
+                  padding: '2px',
+                }}
                 src={`http:${exclusive.image}`}
                 alt="random Background Image"
               />

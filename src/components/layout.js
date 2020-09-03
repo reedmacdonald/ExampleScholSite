@@ -16,7 +16,6 @@ const Layout = props => {
             margin: 0;
           }
 
-          /* More info: https://bit.ly/2PsCnzk */
           * + * {
             margin-top: 1rem;
           }
