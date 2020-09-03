@@ -74,6 +74,7 @@ const Layout = props => {
           property="og:description"
           content={props.description || description}
         />
+        <meta property="og:type" content={props.article ? 'article' : null} />
         <meta property="og:image" content={props.image || null} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.title || title} />
@@ -81,6 +82,7 @@ const Layout = props => {
           name="twitter:description"
           content={props.description || description}
         />
+        <meta property="og:url" content={props.url || 'https://google.com'} />
         <meta name="twitter:image" content={props.image || null} />
       </Helmet>
       <Header />

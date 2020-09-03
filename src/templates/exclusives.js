@@ -18,6 +18,8 @@ const Exclusives = props => {
       title={props.pageContext.title}
       image={`https:${props.pageContext.image}`}
       description={props.pageContext.description}
+      article
+      url={`https://priceless-williams-4cc72b.netlify.app/exclusive/${props.pageContext.slug}`}
     >
       <h1>{props.pageContext.title}</h1>
       <h4>{props.pageContext.description}</h4>
