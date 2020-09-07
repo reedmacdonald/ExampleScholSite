@@ -30,7 +30,6 @@
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-images": "^3.3.25",
-    "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-contentful": "^2.3.37",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-source-instagram": "^0.6.1",
