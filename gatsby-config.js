@@ -43,7 +43,25 @@ module.exports = {
         path: 'lists',
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: { path: `static/assets`, name: 'images' },
+    },
+
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          'gatsby-remark-relative-images',
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,6 +69,7 @@ module.exports = {
         path: `blog`,
       },
     },
+
     {
       resolve: 'gatsby-source-instagram',
       options: {

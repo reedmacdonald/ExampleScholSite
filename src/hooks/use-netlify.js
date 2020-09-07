@@ -9,11 +9,7 @@ const useNetlify = () => {
       ) {
         edges {
           node {
-            rawMarkdownBody
             frontmatter {
-              description
-              path
-              terms
               thumbnail {
                 childImageSharp {
                   fluid {
@@ -21,8 +17,12 @@ const useNetlify = () => {
                   }
                 }
               }
+              description
+              path
+              terms
               title
             }
+            rawMarkdownBody
           }
         }
       }

@@ -58,7 +58,108 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    query {
+      allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
+    }
+  `);
 
+  if (result.errors) {
+    reporter.panic('failed to create posts', result.errors);
+  }
+
+  const posts = result.data.allMdx.nodes;
+
+  posts.forEach(post => {
+    console.log(posts, '<---posts');
+    actions.createPage({
+      path: post.frontmatter.slug,
+      component: require.resolve('./src/templates/post.js'),
+      context: {
+        slug: post.frontmatter.slug,
+      },
+    });
+  });
+};
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allMdx(filter: { frontmatter: { slug: { eq: "hlist" } } }) {
+        nodes {
+          frontmatter {
+            title
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panic('failed to create posts', result.errors);
+  }
+
+  const posts = result.data.allMdx.nodes;
+
+  posts.forEach(post => {
+    actions.createPage({
+      path: `list/${post.frontmatter.slug}`,
+      component: require.resolve('./src/templates/post.js'),
+      context: {
+        slug: post.frontmatter.slug,
+      },
+    });
+  });
+};
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allContentfulBlogPost {
+        nodes {
+          writer
+          blogpost {
+            blogpost
+          }
+          body {
+            json
+            body
+          }
+          slug
+          tag
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panic('failed to create posts', result.errors);
+  }
+
+  const posts = result.data.allContentfulBlogPost.nodes;
+
+  posts.forEach((post, index) => {
+    actions.createPage({
+      path: `posts/${post.slug}`,
+      component: require.resolve('./src/templates/scholarships.js'),
+      context: {
+        slug: post.slug,
+        blogpost: post.blogpost.blogpost,
+        body: post.body,
+        writer: post.writer,
+        tag: post.tag,
+      },
+    });
+  });
+};
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
@@ -67,11 +168,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ) {
         edges {
           node {
-            rawMarkdownBody
             frontmatter {
-              description
-              path
-              terms
               thumbnail {
                 childImageSharp {
                   fluid {
@@ -79,8 +176,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   }
                 }
               }
+              description
+              path
+              terms
               title
             }
+            rawMarkdownBody
           }
         }
       }
@@ -113,7 +214,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         slug: post.node.frontmatter.path,
         title: post.node.frontmatter.title,
         body: post.node.rawMarkdownBody,
-        image: post.node.frontmatter.thumbnail.childImageSharp.fluid.srcWebp,
+        image: post.node.frontmatter.thumbnail,
         terms: post.node.frontmatter.terms,
       },
     });
