@@ -42,7 +42,7 @@ export default () => {
         </Carousel>
         <ImageGrid />
         <h3>These are the ones from NetlifyCMS</h3>
-        <Carousel>
+        <Carousel showThumbs={false}>
           {netlify.map(exclusive => {
             console.log(exclusive.frontmatter, '<---exclusive');
 
@@ -50,7 +50,7 @@ export default () => {
               <div>
                 <p className="legend">{exclusive.title}</p>
 
-                <Img fixed={exclusive.frontmatter} />
+                <img src={exclusive.frontmatter} />
 
                 <br />
               </div>
