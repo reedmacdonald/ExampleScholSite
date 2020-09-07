@@ -15,13 +15,12 @@ import useNetlify from '../hooks/use-netlify';
 export default () => {
   const posts = usePosts();
   const exclusives = useExclusives();
-  console.log(useNetlify(), 'useNetlify');
   return (
     <>
       <Hero />
       <Layout title="Welcome">
         <h2>Exclusive Scholarships</h2>
-        <Markdown>{useNetlify()}</Markdown>
+        <h3>These are the ones from ContentfulCMS</h3>
         <Carousel>
           {exclusives.map(exclusive => (
             <Link to={`/exclusive/${exclusive.slug}`}>
@@ -38,6 +37,7 @@ export default () => {
           ))}
         </Carousel>
         <ImageGrid />
+        <h3>These are the ones from ContentfulCMS</h3>
       </Layout>
     </>
   );
