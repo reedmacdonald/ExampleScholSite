@@ -11,11 +11,72 @@ const Form = props => {
     <>
       {!showModal ? (
         <>
-          <input style={{ width: '50%' }} placeholder="first_name" />
-          <input style={{ width: '50%' }} placeholder="last_name" />
-          <input style={{ width: '50%' }} type="number" placeholder="age" />
-          <input style={{ width: '50%' }} placeholder="location" />
-          <select style={{ width: '50%' }} name="School Year">
+          <input
+            style={{
+              width: '45%',
+              height: '40px',
+              borderRadius: '30px',
+              border: '1px solid black',
+              backgroundColor: 'skyblue',
+              padding: '5px',
+              marginLeft: '2.5%',
+              marginRight: '2.5%',
+            }}
+            placeholder="First Name"
+          />
+          <input
+            style={{
+              width: '45%',
+              height: '40px',
+              borderRadius: '30px',
+              border: '1px solid black',
+              backgroundColor: 'skyblue',
+              padding: '5px',
+              marginLeft: '2.5%',
+              marginRight: '2.5%',
+            }}
+            placeholder="Last Name"
+          />
+          <input
+            style={{
+              width: '45%',
+              height: '40px',
+              borderRadius: '30px',
+              border: '1px solid black',
+              backgroundColor: 'skyblue',
+              padding: '5px',
+              marginLeft: '2.5%',
+              marginRight: '2.5%',
+            }}
+            type="number"
+            placeholder="Age"
+          />
+          <input
+            style={{
+              width: '45%',
+              height: '40px',
+              borderRadius: '30px',
+              border: '1px solid black',
+              backgroundColor: 'skyblue',
+              padding: '5px',
+              marginLeft: '2.5%',
+              marginRight: '2.5%',
+            }}
+            placeholder="Location"
+          />
+          <select
+            style={{
+              width: '45%',
+              height: '40px',
+              borderRadius: '30px',
+              border: '1px solid black',
+              backgroundColor: 'skyblue',
+              padding: '5px',
+              marginLeft: '2.5%',
+              marginRight: '2.5%',
+            }}
+            name="School Year"
+          >
             <option value="freshman">Freshman</option>
             <option value="sophmore">Sophmore</option>
             <option value="junior">Junior</option>

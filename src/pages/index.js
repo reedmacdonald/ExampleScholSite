@@ -18,7 +18,7 @@ export default () => {
   const posts = usePosts();
   const exclusives = useExclusives();
   let netlify = useNetlify();
-  //console.log(useNetlify(), '<----useNetlify');
+
   return (
     <>
       <Hero />
@@ -27,7 +27,7 @@ export default () => {
         <h3>These are the ones from ContentfulCMS</h3>
         <Carousel>
           {exclusives.map(exclusive => (
-            <Link to={`/exclusive/${exclusive.slug}`}>
+            <Link to={`/exclusive/netlify/${exclusive.slug}`}>
               <div>
                 <p className="legend">{exclusive.title}</p>
                 <img
@@ -43,19 +43,18 @@ export default () => {
         <ImageGrid />
         <h3>These are the ones from NetlifyCMS</h3>
         <Carousel showThumbs={false}>
-          {netlify.map(exclusive => {
-            console.log(exclusive.frontmatter, '<---exclusive');
-
-            return (
+          {netlify.map(exclusive => (
+            <Link to={`/exclusive/netlify/${exclusive.path}`}>
               <div>
                 <p className="legend">{exclusive.title}</p>
-
-                <img src={exclusive.frontmatter} />
-
+                <img
+                  style={{ maxHeight: '400px', objectFit: 'cover' }}
+                  src={exclusive.frontmatter}
+                />
                 <br />
               </div>
-            );
-          })}
+            </Link>
+          ))}
         </Carousel>
       </Layout>
     </>

@@ -1,5 +1,3 @@
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
-
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
@@ -56,6 +54,67 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         body: post.body,
         image: post.headerImage.file.url,
         terms: post.termsAndConditions,
+      },
+    });
+  });
+};
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { description: { ne: null } } }
+      ) {
+        edges {
+          node {
+            rawMarkdownBody
+            frontmatter {
+              description
+              path
+              terms
+              thumbnail {
+                childImageSharp {
+                  fluid {
+                    srcWebp
+                  }
+                }
+              }
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panic('failed to create posts', result.errors);
+  }
+
+  const posts = result.data.allMarkdownRemark.edges;
+
+  posts.forEach((post, index) => {
+    console.log(post, '<---post');
+    actions.createPage({
+      path: `exclusive/netlify/${post.node.frontmatter.path}`,
+      component: require.resolve('./src/templates/netlify.js'),
+      context: {
+        slug: post.node.frontmatter.path,
+        title: post.node.frontmatter.title,
+        body: post.node.rawMarkdownBody,
+        image: post.node.frontmatter.thumbnail.childImageSharp.fluid.srcWebp,
+        description: post.node.frontmatter.description,
+      },
+    });
+    actions.createPage({
+      path: `exclusive/netlify/${post.node.frontmatter.path}/terms`,
+      component: require.resolve('./src/templates/netlifyTerms.js'),
+      context: {
+        slug: post.node.frontmatter.path,
+        title: post.node.frontmatter.title,
+        body: post.node.rawMarkdownBody,
+        image: post.node.frontmatter.thumbnail.childImageSharp.fluid.srcWebp,
+        terms: post.node.frontmatter.terms,
       },
     });
   });
