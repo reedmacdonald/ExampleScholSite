@@ -66,5 +66,6 @@ module.exports = {
         accessToken: 'x0iFw_4kt147_wAAdLYzuboK01UWeRBEp2yhRvnXg4s',
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 };
