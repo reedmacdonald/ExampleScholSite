@@ -43,6 +43,14 @@ module.exports = {
         path: 'lists',
       },
     },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `blog`,
+      },
+    },
     {
       resolve: 'gatsby-source-instagram',
       options: {
