@@ -20,4 +20,5 @@ collections:
           name: 'thumbnail',
           widget: 'image',
           default: 'static/assets/hobbit.jpg',
+          type: object,
         }
