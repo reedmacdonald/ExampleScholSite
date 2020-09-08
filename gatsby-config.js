@@ -45,7 +45,14 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-filesystem`,
-      options: { path: `${__dirname}/static/assets`, name: 'images' },
+      options: { path: `/static/assets`, name: 'images' },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `blog`,
+      },
     },
 
     {
@@ -60,13 +67,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `blog`,
       },
     },
 
