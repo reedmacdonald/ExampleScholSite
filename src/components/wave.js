@@ -10,7 +10,7 @@ const Wave = () => {
       css={css`
         background: rebeccapurple;
         border: none;
-        color: white;
+        color: black;
         font-size: 1.25rem;
       `}
       onClick={() => setWaves(waves + 1)}
