@@ -11,7 +11,7 @@ const ImageBackground = styled(BackgroundImage)`
 
   /* override the default margin for sibling elements  */
   + * {
-    margin-top: 0;
+    margin-top: 1;
   }
 `;
 
