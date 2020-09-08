@@ -32,7 +32,7 @@ const Exclusives = props => {
       <br />
       <Link to="terms">Terms and Conditions</Link>
       <br />
-      <Link to="/">&larr; back to all scholarships</Link>
+      <Link to="/">&larr; back to all the scholarships</Link>
       <br />
     </Layout>
   );
