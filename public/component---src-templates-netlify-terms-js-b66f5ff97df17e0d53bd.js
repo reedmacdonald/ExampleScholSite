@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{MAYW:function(t,e,n){"use strict";n.r(e);n("q1tI");var c=n("Wbzz"),a=(n("A2+M"),n("vbKG"),n("R8uD"),n("qKvR")),o=n("Bl7J"),s=(n("vqsN"),n("npV3"));e.default=function(t){return Object(a.c)(o.a,{title:"Terms"},Object(a.c)("h1",null,t.pageContext.title," Terms and Conditions"),Object(a.c)(s.a,null,t.pageContext.terms),Object(a.c)(c.a,{to:"/"},"← back to all exclusives"))}}}]);
+//# sourceMappingURL=component---src-templates-netlify-terms-js-b66f5ff97df17e0d53bd.js.map
